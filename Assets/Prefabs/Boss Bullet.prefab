@@ -110,6 +110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dmg: 0
+  isRotate: 1
 --- !u!212 &3255293083946165766
 SpriteRenderer:
   m_ObjectHideFlags: 0
