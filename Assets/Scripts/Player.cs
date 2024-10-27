@@ -21,7 +21,6 @@ public class Player : MonoBehaviour
 
     public GameObject bulletObjA;
     public GameObject bulletObjB;
-    public GameObject bulletObjC;
     public GameObject boomEffect;
     public GameManager manager;
     
@@ -67,7 +66,7 @@ public class Player : MonoBehaviour
 
     void Fire()
     {
-        //if (!Input.GetButton("Fire1"))
+        //if (!Input.GetKeyDown(KeyCode.Z))
             //return;
 
         if (curShotDelay > maxShotDelay)
@@ -75,13 +74,14 @@ public class Player : MonoBehaviour
 
         switch (power)
         {
-            case 1:
+            case 0:
                 GameObject bullet = Instantiate(bulletObjA, transform.position, transform.rotation);
                 Rigidbody2D rigid = bullet.GetComponent<Rigidbody2D>();
                 rigid.AddForce(Vector2.up * 10, ForceMode2D.Impulse);
                 break;
-
-            case 2:
+            case 1: //case 0:과 동일, 팔로워 기체 코딩 누락
+                break;
+            case 2: //팔로워 기체 코딩 누락
                 GameObject bulletL = Instantiate(bulletObjA, transform.position + Vector3.left * 0.1f, transform.rotation);
                 GameObject bulletR = Instantiate(bulletObjA, transform.position + Vector3.right * 0.1f, transform.rotation);
                 Rigidbody2D rigidL = bulletL.GetComponent<Rigidbody2D>();
@@ -90,7 +90,7 @@ public class Player : MonoBehaviour
                 rigidR.AddForce(Vector2.up * 10, ForceMode2D.Impulse);
                 break;
 
-            case 3:
+            case 3: //팔로워 기체 코딩 누락
                 GameObject bulletLL = Instantiate(bulletObjA, transform.position + Vector3.left * 0.2f, transform.rotation);
                 GameObject bulletCC = Instantiate(bulletObjA, transform.position, transform.rotation);
                 GameObject bulletRR = Instantiate(bulletObjA, transform.position + Vector3.right * 0.2f, transform.rotation);
@@ -102,73 +102,37 @@ public class Player : MonoBehaviour
                 rigidRR.AddForce(Vector2.up * 10, ForceMode2D.Impulse);
                 break;
             
-            case 4:
+            case 4: //팔로워 기체 코딩 누락
                 GameObject bulletLLL = Instantiate(bulletObjA, transform.position + Vector3.left * 0.2f, transform.rotation);
-                GameObject bulletCCC = Instantiate(bulletObjA, transform.position, transform.rotation);
+                GameObject bulletCCC = Instantiate(bulletObjB, transform.position, transform.rotation);
                 GameObject bulletRRR = Instantiate(bulletObjA, transform.position + Vector3.right * 0.2f, transform.rotation);
-                GameObject bulletF1 = Instantiate(bulletObjB, transform.position + Vector3.left * 0.45f, transform.rotation);
-                GameObject bulletF2 = Instantiate(bulletObjB, transform.position + Vector3.right * 0.45f, transform.rotation);
                 Rigidbody2D rigidLLL = bulletLLL.GetComponent<Rigidbody2D>();
                 Rigidbody2D rigidCCC = bulletCCC.GetComponent<Rigidbody2D>();
                 Rigidbody2D rigidRRR = bulletRRR.GetComponent<Rigidbody2D>();
-                Rigidbody2D rigidF1 = bulletF1.GetComponent<Rigidbody2D>();
-                Rigidbody2D rigidF2 = bulletF2.GetComponent<Rigidbody2D>();
                 rigidLLL.AddForce(Vector2.up * 10, ForceMode2D.Impulse);
                 rigidCCC.AddForce(Vector2.up * 10, ForceMode2D.Impulse);
                 rigidRRR.AddForce(Vector2.up * 10, ForceMode2D.Impulse);
-                rigidF1.AddForce(Vector2.up * 10, ForceMode2D.Impulse);
-                rigidF2.AddForce(Vector2.up * 10, ForceMode2D.Impulse);
                 break;
             
-            case 5:
-                GameObject bulletLLLL = Instantiate(bulletObjA, transform.position + Vector3.left * 0.2f, transform.rotation);
-                GameObject bulletCCCC = Instantiate(bulletObjC, transform.position, transform.rotation);
-                GameObject bulletRRRR = Instantiate(bulletObjA, transform.position + Vector3.right * 0.2f, transform.rotation);
-                GameObject bulletFF1 = Instantiate(bulletObjB, transform.position + Vector3.left * 0.45f, transform.rotation);
-                GameObject bulletFF2 = Instantiate(bulletObjB, transform.position + Vector3.right * 0.45f, transform.rotation);
+            case 5: //팔로워 기체 코딩 누락
+                GameObject bulletLLLL = Instantiate(bulletObjB, transform.position + Vector3.left * 0.2f, transform.rotation);
+                GameObject bulletRRRR = Instantiate(bulletObjB, transform.position + Vector3.right * 0.2f, transform.rotation);
                 Rigidbody2D rigidLLLL = bulletLLLL.GetComponent<Rigidbody2D>();
-                Rigidbody2D rigidCCCC = bulletCCCC.GetComponent<Rigidbody2D>();
                 Rigidbody2D rigidRRRR = bulletRRRR.GetComponent<Rigidbody2D>();
-                Rigidbody2D rigidFF1 = bulletFF1.GetComponent<Rigidbody2D>();
-                Rigidbody2D rigidFF2 = bulletFF2.GetComponent<Rigidbody2D>();
                 rigidLLLL.AddForce(Vector2.up * 10, ForceMode2D.Impulse);
-                rigidCCCC.AddForce(Vector2.up * 10, ForceMode2D.Impulse);
                 rigidRRRR.AddForce(Vector2.up * 10, ForceMode2D.Impulse);
-                rigidFF1.AddForce(Vector2.up * 10, ForceMode2D.Impulse);
-                rigidFF2.AddForce(Vector2.up * 10, ForceMode2D.Impulse);
                 break;
 
-            case 6:
-                GameObject bulletLLLLL = Instantiate(bulletObjC, transform.position + Vector3.left * 0.2f, transform.rotation);
-                GameObject bulletRRRRR = Instantiate(bulletObjC, transform.position + Vector3.right * 0.2f, transform.rotation);
-                GameObject bulletFFF1 = Instantiate(bulletObjB, transform.position + Vector3.left * 0.45f, transform.rotation);
-                GameObject bulletFFF2 = Instantiate(bulletObjB, transform.position + Vector3.right * 0.45f, transform.rotation);
+            case 6: //팔로워 기체 코딩 누락
+                GameObject bulletLLLLL = Instantiate(bulletObjA, transform.position + Vector3.left * 0.2f, transform.rotation);
+                GameObject bulletCCCCC = Instantiate(bulletObjB, transform.position, transform.rotation);
+                GameObject bulletRRRRR = Instantiate(bulletObjA, transform.position + Vector3.right * 0.2f, transform.rotation);
                 Rigidbody2D rigidLLLLL = bulletLLLLL.GetComponent<Rigidbody2D>();
+                Rigidbody2D rigidCCCCC = bulletCCCCC.GetComponent<Rigidbody2D>();
                 Rigidbody2D rigidRRRRR = bulletRRRRR.GetComponent<Rigidbody2D>();
-                Rigidbody2D rigidFFF1 = bulletFFF1.GetComponent<Rigidbody2D>();
-                Rigidbody2D rigidFFF2 = bulletFFF2.GetComponent<Rigidbody2D>();
                 rigidLLLLL.AddForce(Vector2.up * 10, ForceMode2D.Impulse);
+                rigidCCCCC.AddForce(Vector2.up * 10, ForceMode2D.Impulse);
                 rigidRRRRR.AddForce(Vector2.up * 10, ForceMode2D.Impulse);
-                rigidFFF1.AddForce(Vector2.up * 10, ForceMode2D.Impulse);
-                rigidFFF2.AddForce(Vector2.up * 10, ForceMode2D.Impulse);
-                break;
-
-            case 7:
-                GameObject bulletLLLLLL = Instantiate(bulletObjC, transform.position + Vector3.left * 0.2f, transform.rotation);
-                GameObject bulletCCCCCC = Instantiate(bulletObjC, transform.position, transform.rotation);
-                GameObject bulletRRRRRR = Instantiate(bulletObjC, transform.position + Vector3.right * 0.2f, transform.rotation);
-                GameObject bulletFFFF1 = Instantiate(bulletObjB, transform.position + Vector3.left * 0.45f, transform.rotation);
-                GameObject bulletFFFF2 = Instantiate(bulletObjB, transform.position + Vector3.right * 0.45f, transform.rotation);
-                Rigidbody2D rigidLLLLLL = bulletLLLLLL.GetComponent<Rigidbody2D>();
-                Rigidbody2D rigidCCCCCC = bulletCCCCCC.GetComponent<Rigidbody2D>();
-                Rigidbody2D rigidRRRRRR = bulletRRRRRR.GetComponent<Rigidbody2D>();
-                Rigidbody2D rigidFFFF1 = bulletFFFF1.GetComponent<Rigidbody2D>();
-                Rigidbody2D rigidFFFF2 = bulletFFFF2.GetComponent<Rigidbody2D>();
-                rigidLLLLLL.AddForce(Vector2.up * 10, ForceMode2D.Impulse);
-                rigidCCCCCC.AddForce(Vector2.up * 10, ForceMode2D.Impulse);
-                rigidRRRRRR.AddForce(Vector2.up * 10, ForceMode2D.Impulse);
-                rigidFFFF1.AddForce(Vector2.up * 10, ForceMode2D.Impulse);
-                rigidFFFF2.AddForce(Vector2.up * 10, ForceMode2D.Impulse);
                 break;
         }
 

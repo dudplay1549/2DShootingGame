@@ -66,7 +66,7 @@ public class GameManager : MonoBehaviour
     public void UpdateLifeIcon(int life)
     {
         //#.UI Life Init Disable
-        for (int index = 0; index < 3; index++)
+        for (int index = 0; index < 2; index++)
         {
             lifeImage[index].color = new Color(1, 1, 1, 0);
         }
@@ -93,7 +93,7 @@ public class GameManager : MonoBehaviour
 
     public void RespawnPlayer()
     {
-        Invoke("RespawnPlayerEXE", 2f);
+        Invoke("RespawnPlayerEXE", 3f);
     }
     void RespawnPlayerEXE()
     {
