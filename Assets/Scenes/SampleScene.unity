@@ -323,7 +323,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a130d43d6bcaf54b88d3e3d3bedadb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyBPrefab: {fileID: 3425774024111092198, guid: 12fe5504aa92c7b42b3d307664fe2075, type: 3}
+  bossAPrefab: {fileID: 3425774024111092198, guid: 12fe5504aa92c7b42b3d307664fe2075, type: 3}
   enemySPrefab: {fileID: 2719836329137281964, guid: be5ed66f5e2c82043b120dcfc55a284d, type: 3}
   enemyMPrefab: {fileID: 4889458885150467588, guid: 280877bf7ca53c340b2fad6fd4f87f85, type: 3}
   enemyLPrefab: {fileID: 1543541755295053495, guid: 677df07f9901eb24c9a385ef9311dcec, type: 3}
@@ -1723,7 +1723,7 @@ GameObject:
   - component: {fileID: 950773828}
   m_Layer: 0
   m_Name: Border
-  m_TagString: Untagged
+  m_TagString: Border
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2061,7 +2061,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.1}
@@ -2248,7 +2248,7 @@ GameObject:
   - component: {fileID: 1163215271}
   m_Layer: 0
   m_Name: BorderBullet
-  m_TagString: Untagged
+  m_TagString: BorderBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

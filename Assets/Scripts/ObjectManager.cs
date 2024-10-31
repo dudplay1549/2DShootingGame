@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ObjectManager : MonoBehaviour
 {
-    public GameObject enemyBPrefab;
+    public GameObject bossAPrefab;
     public GameObject enemySPrefab;
     public GameObject enemyMPrefab;
     public GameObject enemyLPrefab;
@@ -22,7 +22,7 @@ public class ObjectManager : MonoBehaviour
     public GameObject bulletBossPrefab;
 
 
-    GameObject[] enemyB;
+    GameObject[] bossA;
     GameObject[] enemyS;
     GameObject[] enemyM;
     GameObject[] enemyL;
@@ -43,7 +43,7 @@ public class ObjectManager : MonoBehaviour
 
     void Awake()
     {
-        enemyB = new GameObject[1];
+        bossA = new GameObject[1];
         enemyS = new GameObject[20];
         enemyM = new GameObject[10];
         enemyL = new GameObject[10];
@@ -66,10 +66,10 @@ public class ObjectManager : MonoBehaviour
     void Generate()
     {
         //Enemy
-        for (int index = 0; index < enemyB.Length; index++)
+        for (int index = 0; index < bossA.Length; index++)
         {
-            enemyB[index] = Instantiate(enemyBPrefab);
-            enemyB[index].SetActive(false);
+            bossA[index] = Instantiate(bossAPrefab);
+            bossA[index].SetActive(false);
         }
 
         for (int index = 0; index < enemyS.Length; index++)
@@ -157,8 +157,8 @@ public class ObjectManager : MonoBehaviour
     {
         switch(type)
         {
-            case "EnemyB":
-                targetPool = enemyB;
+            case "BossA":
+                targetPool = bossA;
                 break;
 
             case "EnemyS":
@@ -229,8 +229,8 @@ public class ObjectManager : MonoBehaviour
     {
         switch (type)
         {
-            case "EnemyB":
-                targetPool = enemyB;
+            case "BossA":
+                targetPool = bossA;
                 break;
 
             case "EnemyS":

@@ -56,8 +56,8 @@ public class Follower : MonoBehaviour
 
     void Fire()
     {
-        //if (!Input.GetKeyDown(KeyCode.Z))
-        //return;
+        if (!Input.GetKeyDown(KeyCode.Z))
+        return;
 
         if (curShotDelay > maxShotDelay)
             return;

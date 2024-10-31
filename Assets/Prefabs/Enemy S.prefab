@@ -116,16 +116,20 @@ MonoBehaviour:
   sprites:
   - {fileID: 8414478535512612329, guid: 138040323294fd440a3a823e5d70ad01, type: 3}
   - {fileID: 4326287474489854147, guid: 138040323294fd440a3a823e5d70ad01, type: 3}
-  maxShotDelay: 3
+  maxShotDelay: 5
   curShotDelay: 0
   bulletObjA: {fileID: 4037683037811683687, guid: 234cd554e1cae774e865391988c85444, type: 3}
   bulletObjB: {fileID: 6394783042220876857, guid: 1a44b44d01c0c6a4da1ab24aca12d492, type: 3}
   bulletObjC: {fileID: 354542477238556044, guid: a507fe12e134f3846992e3e68cb44774, type: 3}
+  bulletBoss: {fileID: 0}
   itemCoin: {fileID: 4410957810916870408, guid: 63ceee06ba14ff044a669dcffe69fba2, type: 3}
   itemPower: {fileID: 5126479260673675901, guid: b9467145591c88140ac65dd9a16080d8, type: 3}
   itemBoom: {fileID: 4872034055651308712, guid: 88468c3570b6ce64c95434214530feec, type: 3}
   player: {fileID: 0}
   objectManager: {fileID: 0}
+  patternIndex: 0
+  curPatternCount: 0
+  maxPatternCount: 
 --- !u!212 &2346155486559055267
 SpriteRenderer:
   m_ObjectHideFlags: 0

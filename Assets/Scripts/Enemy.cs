@@ -17,6 +17,7 @@ public class Enemy : MonoBehaviour
     public GameObject bulletObjA;
     public GameObject bulletObjB;
     public GameObject bulletObjC;
+    public GameObject bulletObjBoss;
 
     public GameObject itemCoin;
     public GameObject itemPower;
@@ -36,7 +37,7 @@ public class Enemy : MonoBehaviour
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
 
-        if (enemyName == "B")
+        if (enemyName == "BossA")
             anim = GetComponent<Animator>();
     }
 
@@ -44,8 +45,8 @@ public class Enemy : MonoBehaviour
     {
         switch (enemyName)
         {
-            case "B":
-                health = 500;
+            case "BossA":
+                health = 5000;
                 Invoke("Stop", 3);
                 break;
 
@@ -212,7 +213,7 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
-        if (enemyName == "B")
+        if (enemyName == "BossA")
             return;
 
         Fire();
@@ -277,7 +278,7 @@ public class Enemy : MonoBehaviour
                 return;
 
             health -= dmg;
-            if(enemyName == "B")
+            if(enemyName == "BossA")
             {
                 anim.SetTrigger("OnHit");
             }
@@ -291,7 +292,7 @@ public class Enemy : MonoBehaviour
             playerLogic.score += enemyScore;
 
             //Random Ratio Item Drop
-            int ran = enemyName == "B" ? 0 : Random.Range(0, 10);
+            int ran = enemyName == "BossA" ? 0 : Random.Range(0, 10);
             if(ran < 3) // Not Item 30%
             {
                 Debug.Log("Not Item");
@@ -326,7 +327,7 @@ public class Enemy : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "BorderBullet" && enemyName == "B")
+        if (collision.gameObject.tag == "BorderBullet" && enemyName == "BossA")
         {
             gameObject.SetActive(false);
             transform.rotation = Quaternion.identity;
